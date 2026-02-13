@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ad Astra</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/chart.js@2.8.0/dist/Chart.bundle.js"></script>
+    <script src="https://unpkg.com/chartjs-gauge@0.3.0/dist/chartjs-gauge.js"></script>
+  </head>
+  <body class="text-black w-screen h-screen">
+    <header
+      class="bg-primary text-black p-4 text-center flex items-center justify-around w-full h-16"
+    >
+      <img
+        src="{{ url_for('static', filename='images/adastra_logo.jpeg') }}"
+        class="w-16 h-16 rounded-full"
+      />
+      <a href="/"
+        ><button class="hover:text-white text-xl">Dashboard</button></a
+      >
+      <a href="/science-subsystem"
+        ><button class="hover:text-white text-xl">Science-subsystem</button></a
+      >
+      <a href="/autonomous-mode"
+        ><button class="hover:text-white text-xl">Autonomous mode</button></a
+      >
+      <a href="/power-subsystem"
+        ><button class="hover:text-white text-xl">Power-subsystem</button></a
+      >
+      <a href="/map-navigation"
+        ><button class="hover:text-white text-xl">Map</button></a
+      >
+    </header>
+    <div class="w-screen h-auto px-3 py-3">
+      {% block content %} {% endblock %}
+    </div>
+  </body>
+</html>
